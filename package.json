@@ -1,7 +1,7 @@
 {
-  "name": "@ks-light/nodejieba",
+  "name": "@goblinalchemist/nodejieba",
   "description": "chinese word segmentation for node",
-  "version": "0.0.5",
+  "version": "0.0.1",
   "author": "marui11@kuaishou.com",
   "license": "MIT",
   "maintainers": [
@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://git.corp.kuaishou.com/ks-ad/ad-fe/infra/light/nodejieba.git"
+    "url": "https://github.com/GoblinAlchemist/nodejieba.git"
   },
   "keywords": [
     "chinese",
@@ -40,6 +40,13 @@
     "lib",
     "binding.gyp"
   ],
+  "binary": {
+    "module_name": "@goblinalchemist/nodejieba",
+    "module_path": "./build/Release/",
+    "host": "https://github.com/GoblinAlchemist/nodejieba/releases/download/",
+    "remote_path": "v{version}",
+    "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz"
+  },
   "scripts": {
     "binary:build": "node-gyp configure && node-pre-gyp build",
     "binary:rebuild": "node-pre-gyp rebuild",
