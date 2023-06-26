@@ -41,7 +41,7 @@
     "binding.gyp"
   ],
   "binary": {
-    "module_name": "@goblinalchemist/nodejieba",
+    "module_name": "nodejieba",
     "module_path": "./build/Release/",
     "host": "https://github.com/GoblinAlchemist/nodejieba/releases/download/",
     "remote_path": "v{version}",
@@ -51,7 +51,7 @@
     "binary:build": "node-gyp configure && node-pre-gyp build",
     "binary:rebuild": "node-pre-gyp rebuild",
     "binary:pack": "node-pre-gyp package",
-    "binary:release": "node-pre-gyp-github publish --release",
+    "binary:release": "NODE_PRE_GYP_GITHUB_TOKEN=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 node-pre-gyp-github publish --release",
     "build": "rollup -c rollup.config.ts --configPlugin esbuild",
     "clean": "rimraf build/ dist/",
     "test": "vitest",
