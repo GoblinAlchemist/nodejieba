@@ -1,0 +1,74 @@
+{
+  "name": "@ks-light/nodejieba",
+  "description": "chinese word segmentation for node",
+  "version": "0.0.5",
+  "author": "marui11@kuaishou.com",
+  "license": "MIT",
+  "maintainers": [
+    "marui11@kuaishou.com"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://git.corp.kuaishou.com/ks-ad/ad-fe/infra/light/nodejieba.git"
+  },
+  "keywords": [
+    "chinese",
+    "segment",
+    "cppjieba",
+    "jieba",
+    "中文分词",
+    "结巴分词"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "engines": {
+    "node": ">= 16"
+  },
+  "files": [
+    "deps",
+    "dist",
+    "dict",
+    "lib",
+    "binding.gyp"
+  ],
+  "scripts": {
+    "binary:build": "node-gyp configure && node-pre-gyp build",
+    "binary:rebuild": "node-pre-gyp rebuild",
+    "binary:pack": "node-pre-gyp package",
+    "binary:release": "node-pre-gyp-github publish --release",
+    "build": "rollup -c rollup.config.ts --configPlugin esbuild",
+    "clean": "rimraf build/ dist/",
+    "test": "vitest",
+    "test:benchmark": "vitest bench",
+    "test:coverage": "vitest --coverage",
+    "install": "node-pre-gyp install --fallback-to-build",
+    "prepublishOnly": "pnpm clean && pnpm build"
+  },
+  "packageManager": "pnpm@8.5.1",
+  "dependencies": {
+    "@mapbox/node-pre-gyp": "^1.0.10",
+    "node-addon-api": "^6.1.0",
+    "node-gyp": "^9.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.4",
+    "@vitest/coverage-c8": "^0.31.1",
+    "esbuild": "^0.17.19",
+    "node-pre-gyp-github": "^1.4.4",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.23.0",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "typescript": "^5.0.4",
+    "vitest": "^0.31.1"
+  }
+}
