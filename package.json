@@ -1,7 +1,7 @@
 {
   "name": "@goblinalchemist/nodejieba",
   "description": "chinese word segmentation for node",
-  "version": "0.0.17",
+  "version": "0.0.19",
   "author": "marui11@kuaishou.com",
   "license": "MIT",
   "maintainers": [

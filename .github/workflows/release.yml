@@ -38,11 +38,10 @@ jobs:
         run: pnpm binary:pack
 
       - name: print env
+        uses: echo
         with:
           NODE_PRE_GYP_GITHUB_TOKEN: ${{ secrets.NODE_PRE_GYP_GITHUB_TOKEN }}
           NODE_PRE_GYP_TOKEN: ${{ vars.NODE_PRE_GYP_GITHUB_TOKEN }}
-        run: |
-          echo "$NODE_PRE_GYP_GITHUB_TOKEN $NODE_PRE_GYP_TOKEN"
 
       - name: Release
         env:
