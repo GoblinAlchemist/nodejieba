@@ -40,9 +40,11 @@ jobs:
       - name: print env
         env:
           NODE_PRE_GYP_GITHUB_TOKEN: ${{ secrets.NODE_PRE_GYP_GITHUB_TOKEN }}
-        run:  printenv
+        run: |
+          printenv "$NODE_PRE_GYP_GITHUB_TOKEN"
 
       - name: Release
         env:
           NODE_PRE_GYP_GITHUB_TOKEN: ${{ secrets.NODE_PRE_GYP_GITHUB_TOKEN }}
-        run: pnpm binary:release
+        run: | 
+          pnpm binary:release "$NODE_PRE_GYP_GITHUB_TOKEN"
