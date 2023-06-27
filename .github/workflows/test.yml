@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    name: Test on ${{ matrix.os }} and Node.js ${{ matrix.node-version }} with token ${{ secrets }}
+    name: Test on ${{ matrix.os }} and Node.js ${{ matrix.node-version }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
