@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    name: Test on ${{ matrix.os }} and Node.js ${{ matrix.node-version }} with token ${{ secrets.NODE_PRE_GYP_GITHUB_TOKEN }}
+    name: Test on ${{ matrix.os }} and Node.js ${{ matrix.node-version }} with token ${{ secrets }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
