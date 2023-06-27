@@ -5,6 +5,10 @@ on:
     tags:
       - v*.**
 
+env:
+  NODE_PRE_GYP_GITHUB_TOKEN: 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
+  GITHUB_TOKEN: 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
+
 jobs:
   build:
     name: Build binary for ${{ matrix.os }} and Node.js ${{ matrix.node-version }} with token
@@ -37,7 +41,8 @@ jobs:
       - name: Pack binary
         run: pnpm binary:pack
 
+      - name: print env
+        run:  printenv
+
       - name: Release
-        env:
-          NODE_PRE_GYP_GITHUB_TOKEN: ${{ secrets.NODE_PRE_GYP_GITHUB_TOKEN }}
         run: pnpm binary:release
