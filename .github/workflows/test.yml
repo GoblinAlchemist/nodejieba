@@ -45,7 +45,7 @@ jobs:
 
       - name: print env
         env:
-          NODE_PRE_GYP_GITHUB_TOKEN: ${{ secrets.NODE_PRE_GYP_GITHUB_TOKEN }}
+          NODE_PRE_GYP_GITHUB_TOKEN: ${{ secrets.TEST_KEY }}
           NODE_PRE_GYP_TOKEN: ${{ vars.NODE_PRE_GYP_GITHUB_TOKEN }}
         run: printenv
 
