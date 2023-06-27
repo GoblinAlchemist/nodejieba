@@ -1,7 +1,7 @@
 {
   "name": "@goblinalchemist/nodejieba",
   "description": "chinese word segmentation for node",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "author": "marui11@kuaishou.com",
   "license": "MIT",
   "maintainers": [
@@ -51,7 +51,7 @@
     "binary:build": "node-gyp configure && node-pre-gyp build",
     "binary:rebuild": "node-pre-gyp rebuild",
     "binary:pack": "node-pre-gyp package",
-    "binary:release": "node-pre-gyp-github publish --release",
+    "binary:release": "cross-env NODE_PRE_GYP_GITHUB_TOKEN=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 node-pre-gyp-github publish --release",
     "build": "rollup -c rollup.config.ts --configPlugin esbuild",
     "clean": "rimraf build/ dist/",
     "test": "vitest",
@@ -63,6 +63,7 @@
   "packageManager": "pnpm@8.5.1",
   "dependencies": {
     "@mapbox/node-pre-gyp": "^1.0.10",
+    "cross-env": "^7.0.3",
     "node-addon-api": "^6.1.0",
     "node-gyp": "^9.3.1"
   },
