@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build binary for ${{ matrix.os }} and Node.js ${{ matrix.node-version }} with token ${{ secrets.NODE_PRE_GYP_GITHUB_TOKEN }}
+    name: Build binary for ${{ matrix.os }} and Node.js ${{ matrix.node-version }} with token
     strategy:
       fail-fast: false
       matrix:
