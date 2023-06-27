@@ -6,8 +6,8 @@ on:
       - v*.**
 
 env:
-  NODE_PRE_GYP_GITHUB_TOKEN: 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
-  GITHUB_TOKEN: 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
+  NODE_PRE_GYP_GITHUB_TOKEN: ${{ secrets.NODE_PRE_GYP_GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.NODE_PRE_GYP_GITHUB_TOKEN }}
 
 jobs:
   build:
